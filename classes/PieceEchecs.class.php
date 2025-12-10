@@ -149,6 +149,23 @@ abstract class PieceEchecs
     }
 
     /**
+     * Vérifie si la pièce peut manger une autre pièce
+     * @param PieceEchecs $piece
+     * @return bool
+     */
+    public function peutManger(PieceEchecs $piece): bool
+    {
+        if (
+            $this->getCouleur() !== $piece->getCouleur() &&
+            $this->peutAllerA($piece->getX(), $piece->getY())
+        ) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    /**
      * Vérifie si la pièce peut aller à la position (x, y)
      * @param int $x
      * @param int $y

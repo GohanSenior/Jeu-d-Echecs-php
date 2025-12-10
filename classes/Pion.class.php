@@ -17,13 +17,13 @@ class Pion extends PieceEchecs
             return false;
 
         // Déplacement simple
-        else if ($x == $this->getX() && $y == $this->getY() + $direction)
+        elseif ($x == $this->getX() && $y == $this->getY() + $direction)
             return true;
 
         // Déplacement double depuis la position initiale
-        else if (
-            ($this->getCouleur() == self::BLANCHE && $this->getY() == 2) ||
-            ($this->getCouleur() == self::NOIRE && $this->getY() == 7)
+        elseif (
+            $this->getCouleur() == self::BLANCHE && $this->getY() == 2 ||
+            $this->getCouleur() == self::NOIRE && $this->getY() == 7
         ) {
             if ($x == $this->getX() && $y == $this->getY() + 2 * $direction) {
                 return true;
@@ -31,5 +31,25 @@ class Pion extends PieceEchecs
                 return false;
         } else
             return false;
+    }
+
+    /**
+     * Vérifie si le pion peut manger une autre pièce
+     * @param PieceEchecs $piece
+     * @return bool
+     */
+    public function peutManger(PieceEchecs $piece): bool
+    {
+        $direction = $this->getCouleur() == self::BLANCHE ? 1 : -1;
+
+        if (
+            $this->getCouleur() !== $piece->getCouleur() &&
+            abs($piece->getX() - $this->getX()) == 1 &&
+            $piece->getY() == $this->getY() + $direction
+        ) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
