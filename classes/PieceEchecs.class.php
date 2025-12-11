@@ -140,7 +140,7 @@ abstract class PieceEchecs
      * @param int $y
      * @return bool
      */
-    public function estDansLEchiquier(int $x, int $y): bool
+    protected function estDansLEchiquier(int $x, int $y): bool
     {
         if ($x < 1 || $x > 8 || $y < 1 || $y > 8)
             return false;

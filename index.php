@@ -43,23 +43,28 @@ try {
     // echo ($pionBlanc->peutAllerA(6, 5) ? "peut" : "ne peut pas") . " aller en (6, 5)" . RC;
     // echo RC;
 
-    $cavalierBlanc = new Cavalier(5, 5, PieceEchecs::BLANCHE);
-    echo $cavalierBlanc . RC;
-    $pionNoir = new Pion(4, 7, PieceEchecs::NOIRE);
-    echo $pionNoir . RC;
-    $fouNoir = new Fou(4, 4, PieceEchecs::NOIRE);
-    echo $fouNoir . RC;
-    $pionBlanc = new Pion(5, 3, PieceEchecs::BLANCHE);
-    echo $pionBlanc . RC;
-    $roiBlanc = new Roi(5, 4, PieceEchecs::BLANCHE);
-    echo $roiBlanc . RC;
-    echo RC;
-    echo "Le cavalier blanc" . ($cavalierBlanc->peutManger($pionNoir) ? " peut" : " ne peut pas") . " manger le pion noir" . RC;
-    echo "Le pion noir" . ($pionNoir->peutManger($cavalierBlanc) ? " peut" : " ne peut pas") . " manger le cavalier blanc" . RC;
-    echo "Le pion blanc" . ($pionBlanc->peutManger($fouNoir) ? " peut" : " ne peut pas") . " manger le fou noir" . RC;
-    echo "le fou Noir" . ($fouNoir->peutManger($pionBlanc) ? " peut" : " ne peut pas") . " manger le pion blanc" . RC;
-    echo "le roi Blanc" . ($roiBlanc->peutManger($pionBlanc) ? " peut" : " ne peut pas") . " manger le pion blanc" . RC;
-    echo "le roi Blanc" . ($roiBlanc->peutManger($fouNoir) ? " peut" : " ne peut pas") . " manger le pion blanc" . RC;
+    // Affichage de l'échiquier
+    $echiquier = new Echiquier();
+    $echiquier->afficherEchiquier();
+
+
+    // $cavalierBlanc = new Cavalier(5, 5, PieceEchecs::BLANCHE);
+    // echo $cavalierBlanc . RC;
+    // $pionNoir = new Pion(4, 7, PieceEchecs::NOIRE);
+    // echo $pionNoir . RC;
+    // $fouNoir = new Fou(4, 4, PieceEchecs::NOIRE);
+    // echo $fouNoir . RC;
+    // $pionBlanc = new Pion(5, 3, PieceEchecs::BLANCHE);
+    // echo $pionBlanc . RC;
+    // $roiBlanc = new Roi(5, 4, PieceEchecs::BLANCHE);
+    // echo $roiBlanc . RC;
+    // echo RC;
+    // echo "Le cavalier blanc" . ($cavalierBlanc->peutManger($pionNoir) ? " peut" : " ne peut pas") . " manger le pion noir" . RC;
+    // echo "Le pion noir" . ($pionNoir->peutManger($cavalierBlanc) ? " peut" : " ne peut pas") . " manger le cavalier blanc" . RC;
+    // echo "Le pion blanc" . ($pionBlanc->peutManger($fouNoir) ? " peut" : " ne peut pas") . " manger le fou noir" . RC;
+    // echo "le fou Noir" . ($fouNoir->peutManger($pionBlanc) ? " peut" : " ne peut pas") . " manger le pion blanc" . RC;
+    // echo "le roi Blanc" . ($roiBlanc->peutManger($pionBlanc) ? " peut" : " ne peut pas") . " manger le pion blanc" . RC;
+    // echo "le roi Blanc" . ($roiBlanc->peutManger($fouNoir) ? " peut" : " ne peut pas") . " manger le pion blanc" . RC;
 
 
 } catch (PieceEchecsExceptions $e) {
