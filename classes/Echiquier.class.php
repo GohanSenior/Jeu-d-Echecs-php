@@ -5,20 +5,20 @@ class Echiquier
     // Pièces blanches :
 
     // ♔ U+2654 - Roi blanc
-// ♕ U+2655 - Dame blanche
-// ♖ U+2656 - Tour blanche
-// ♗ U+2657 - Fou blanc
-// ♘ U+2658 - Cavalier blanc
-// ♙ U+2659 - Pion blanc
+    // ♕ U+2655 - Dame blanche
+    // ♖ U+2656 - Tour blanche
+    // ♗ U+2657 - Fou blanc
+    // ♘ U+2658 - Cavalier blanc
+    // ♙ U+2659 - Pion blanc
 
     // Pièces noires :
 
     // ♚ U+265A - Roi noir
-// ♛ U+265B - Dame noire
-// ♜ U+265C - Tour noire
-// ♝ U+265D - Fou noir
-// ♞ U+265E - Cavalier noir
-// ♟ U+265F - Pion noir
+    // ♛ U+265B - Dame noire
+    // ♜ U+265C - Tour noire
+    // ♝ U+265D - Fou noir
+    // ♞ U+265E - Cavalier noir
+    // ♟ U+265F - Pion noir
 
     // exemple: echo "\u{2654}"; // ♔ Roi blanc
 
@@ -42,7 +42,7 @@ class Echiquier
                     switch ($col) {
                         case 1:
                         case 8:
-                            $this->cases[$col][$ligne] = new Tour($col, $ligne, PieceEchecs::NOIRE);
+                            // $this->cases[$col][$ligne] = new Tour($col, $ligne, PieceEchecs::NOIRE);
                             echo " \u{265C} "; // Tour noire
                             break;
                         case 2:
